@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
+import 'package:plane_chellange/config/colors/colors.dart';
 
 import '../type_of_ticket/components/custom_paint_partida.dart';
 
@@ -9,9 +10,10 @@ class GetTicket extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Color.fromARGB(255, 59, 85, 59),
+      backgroundColor: colorGreen,
       body: Stack(
         children: [
+          
           Column(
             crossAxisAlignment: CrossAxisAlignment.stretch,
             children: const [
@@ -38,7 +40,7 @@ class GetTicket extends StatelessWidget {
           const Positioned(
               bottom: 430,
               right: 57,
-              child: CustomArcor(color: Color.fromARGB(255, 203, 132, 25))),
+              child: CustomArcor(color: colorOrange)),
           Positioned(
             top: 420,
             right: 150,
@@ -46,7 +48,7 @@ class GetTicket extends StatelessWidget {
               child: Container(
                 height: 8,
                 width: 8,
-                color: const Color.fromARGB(255, 203, 132, 25),
+                color:  colorOrange,
               ),
             ),
           ),
@@ -55,13 +57,13 @@ class GetTicket extends StatelessWidget {
             left: 33,
             child: GestureDetector(
               onTap: () {
-                context.push('/type_ticket');
+                context.push('/ticket_from');
               },
               child: Container(
                 height: 70,
                 width: 190,
                 decoration: BoxDecoration(
-                    color: const Color.fromARGB(255, 203, 132, 25),
+                    color:  colorOrange,
                     borderRadius: BorderRadius.circular(20)),
                 child: const Center(
                     child: Text(
@@ -79,7 +81,7 @@ class GetTicket extends StatelessWidget {
               right: 20,
               child: Image.asset(
                 'assets/img/map.png',
-                color: Colors.grey,
+                  color: Colors.grey.shade600,
                 fit: BoxFit.cover,
               )),
           Positioned(

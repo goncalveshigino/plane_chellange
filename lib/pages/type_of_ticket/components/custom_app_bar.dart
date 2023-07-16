@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:plane_chellange/config/colors/colors.dart';
 import 'custom_paint_partida.dart';
 
 
@@ -10,11 +11,12 @@ class CustomAppBar extends StatelessWidget {
   Widget build(BuildContext context) {
     return Stack(
       children: [
+
         Container(
-          color: const Color.fromARGB(255, 59, 85, 59),
+          color: colorGreen,
           height: 220,
         ),
-        Image.asset('assets/img/map.png', color: Colors.grey,),
+        Image.asset('assets/img/map.png', color: Colors.grey.shade600,),
         const Positioned(
           top: 45,
           left: 20,
@@ -46,6 +48,7 @@ class CustomAppBar extends StatelessWidget {
           left: 30,
           child: Row(
             children: [
+              
               const Text(
                 'One Way',
                 style: TextStyle(
@@ -70,7 +73,7 @@ class CustomAppBar extends StatelessWidget {
                   Container(
                     height: 2,
                     width: 40,
-                    color: const Color.fromARGB(255, 203, 132, 25),
+                    color: colorOrange,
                   )
                 ],
               ),
@@ -80,7 +83,7 @@ class CustomAppBar extends StatelessWidget {
          const Positioned(
           top: 110, 
           left: 230,
-          child: CustomArcor(color: Color.fromARGB(255, 203, 132, 25))
+          child: CustomArcor(color: colorOrange)
          ),
          Positioned(
             bottom: 55,
@@ -99,7 +102,7 @@ class CustomAppBar extends StatelessWidget {
             child: Container(
               height: 12,
               width: 12,
-              color: const Color.fromARGB(255, 203, 132, 25),
+              color: colorOrange,
             ),
           ),
         )

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
+import 'package:plane_chellange/config/colors/colors.dart';
 import 'package:plane_chellange/pages/recent_flight/components/card_details_recent.dart';
 
 import '../type_of_ticket/components/components.dart';
@@ -10,13 +11,13 @@ class RecentFlights extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: const Color.fromARGB(255, 247, 245, 245),
+      backgroundColor: backgroundColor,
       body: Stack(
         children: [
           Container(
             height: 280,
             decoration: const BoxDecoration(
-                color: Color.fromARGB(255, 59, 85, 59),
+                color: colorGreen,
                 borderRadius: BorderRadius.only(
                   bottomLeft: Radius.circular(40),
                   bottomRight: Radius.circular(40),
@@ -49,36 +50,41 @@ class RecentFlights extends StatelessWidget {
                           SizedBox(width: 15),
                           Icon(
                             Icons.arrow_drop_down,
-                            color: Color.fromARGB(255, 203, 132, 25),
+                            color: colorOrange,
                           )
                         ],
                       ),
                     ),
                   ],
                 ),
-                const SizedBox(height: 40),
-                const CardDetailsRecent(
-                  image: 'assets/img/british.png',
-                  text1: '12:00 Am',
-                  text2: '03:00 Am',
-                  text3: '02:00 Am',
-                  text4: 'AOA 350',
-                ),
-                const SizedBox(height: 20),
-                const CardDetailsRecent(
-                  image: 'assets/img/etihad.png',
-                  text1: '08:00 Am',
-                  text2: '11:00 Am',
-                  text3: '10:00 Am',
-                  text4: 'AOA 150',
-                ),
-                const SizedBox(height: 20),
-                const CardDetailsRecent(
-                  image: 'assets/img/saudia.png',
-                  text1: '12:30 Am',
-                  text2: '03:00 Am',
-                  text3: '01:00 Am',
-                  text4: 'AOA 450',
+        
+                ListView(
+                  shrinkWrap: true,
+                  children: const [
+                    CardDetailsRecent(
+                      image: 'assets/img/british.png',
+                      text1: '12:00 Am',
+                      text2: '03:00 Am',
+                      text3: '02:00 Am',
+                      text4: 'AOA 350',
+                    ),
+                    SizedBox(height: 20),
+                    CardDetailsRecent(
+                      image: 'assets/img/etihad.png',
+                      text1: '08:00 Am',
+                      text2: '11:00 Am',
+                      text3: '10:00 Am',
+                      text4: 'AOA 150',
+                    ),
+                    SizedBox(height: 20),
+                    CardDetailsRecent(
+                      image: 'assets/img/saudia.png',
+                      text1: '12:30 Am',
+                      text2: '03:00 Am',
+                      text3: '01:00 Am',
+                      text4: 'AOA 450',
+                    )
+                  ],
                 )
               ],
             ),
@@ -91,7 +97,7 @@ class RecentFlights extends StatelessWidget {
                 CustomText(
                   text1: 'BSW',
                   text2: 'Barstow',
-                  color: Color.fromARGB(255, 203, 132, 25),
+                  color: colorOrange,
                 ),
                 SizedBox(width: 60),
                 CustomText2(
@@ -113,13 +119,13 @@ class RecentFlights extends StatelessWidget {
           const Positioned(
             top: 180,
             left: 155,
-            child: CustomArco(color: Color.fromARGB(255, 203, 132, 25)),
+            child: CustomArco(color: colorOrange),
           ),
           Positioned(
               top: 0,
               child: Image.asset(
                 'assets/img/map.png',
-                color: Colors.grey,
+                color: Colors.grey.shade600,
                 height: 270,
               )),
           Positioned(

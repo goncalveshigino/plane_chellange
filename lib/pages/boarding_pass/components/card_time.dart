@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:plane_chellange/config/colors/colors.dart';
 
 import '../../type_of_ticket/components/components.dart';
 
@@ -16,7 +17,7 @@ class CardTime extends StatelessWidget {
           CustomText(
             text1: 'BSW',
             text2: 'Barstow',
-            color: Color.fromARGB(255, 203, 132, 25),
+            color: colorOrange,
           ),
           SizedBox(width: 60),
           CustomText2(

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:plane_chellange/config/colors/colors.dart';
 import 'components.dart';
 
 class SeletedSeatCard extends StatelessWidget {
@@ -9,14 +10,14 @@ class SeletedSeatCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.only(left: 40, top: 25),
+      padding: const EdgeInsets.only(left: 55, top: 25),
       child: Column(
         children: [
 
           Row(
             children: const [
               CardSeat(
-                color: Color.fromARGB(255, 203, 132, 25),
+                color: colorOrange,
                 text: Text('A1', style: TextStyle( fontSize: 18, fontWeight: FontWeight.bold, color: Colors.white),),
               ),
 
@@ -50,7 +51,7 @@ class SeletedSeatCard extends StatelessWidget {
               ),
 
               CardSeat(
-                color: Color.fromARGB(255, 57, 78, 57),
+                color: colorGreen,
                 text: Text('A2', style: TextStyle( fontSize: 18, fontWeight: FontWeight.bold, color: Colors.white ),),
               ),
 

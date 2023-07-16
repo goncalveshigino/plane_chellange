@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
+import 'package:plane_chellange/config/colors/colors.dart';
 
 import '../../widgets/widgets.dart';
 
@@ -74,7 +75,7 @@ class CardDetailsRecent extends StatelessWidget {
                 style: const TextStyle(
                     fontSize: 15,
                     fontWeight: FontWeight.bold,
-                    color: Color.fromARGB(255, 203, 132, 25)),
+                    color: colorOrange),
               ),
             ),
           ],

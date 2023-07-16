@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
+import 'package:plane_chellange/config/colors/colors.dart';
 
 import 'components/components.dart';
 
@@ -10,17 +12,18 @@ class TicketFromPage extends StatelessWidget {
     final size = MediaQuery.of(context).size;
 
     return Scaffold(
-      backgroundColor: const Color.fromARGB(255, 247, 245, 245),
+      backgroundColor: backgroundColor,
       body: Column(
         children: [
-
           Stack(
             children: [
-
               Container(
                 height: size.height * 0.35,
-                color: const Color.fromARGB(255, 59, 85, 59),
-                child: Image.asset('assets/img/map.png', color: Colors.grey,),
+                color: colorGreen,
+                child: Image.asset(
+                  'assets/img/map.png',
+                  color: Colors.grey.shade600,
+                ),
               ),
               CardFromTo(size: size),
               const Positioned(
@@ -41,11 +44,9 @@ class TicketFromPage extends StatelessWidget {
                       height: 50,
                       width: 50,
                       decoration: const BoxDecoration(
-                          color: Color.fromARGB(255, 203, 132, 25),
+                          color: colorOrange,
                           boxShadow: [
-                            BoxShadow(
-                                color: Color.fromARGB(255, 203, 132, 25),
-                                blurRadius: 40)
+                            BoxShadow(color: colorOrange, blurRadius: 40)
                           ]),
                       child: Padding(
                         padding: const EdgeInsets.all(1),
@@ -66,15 +67,15 @@ class TicketFromPage extends StatelessWidget {
                   ),
                 ),
               ),
-
               Positioned(
                 top: 110,
                 left: 120,
-                child: Image.asset('assets/img/fli2.png', height: 30,),
+                child: Image.asset(
+                  'assets/img/fli2.png',
+                  height: 30,
+                ),
               ),
-
-            
-                const Positioned(
+              const Positioned(
                 top: 65,
                 left: 20,
                 child: Text(
@@ -102,7 +103,6 @@ class TicketFromPage extends StatelessWidget {
               )
             ],
           ),
-
           Padding(
             padding: const EdgeInsets.only(top: 30, left: 25),
             child: Row(
@@ -130,7 +130,7 @@ class TicketFromPage extends StatelessWidget {
                       SizedBox(width: 15),
                       Icon(
                         Icons.arrow_drop_down,
-                        color: Color.fromARGB(255, 203, 132, 25),
+                        color: colorOrange,
                       )
                     ],
                   ),
@@ -138,26 +138,24 @@ class TicketFromPage extends StatelessWidget {
               ],
             ),
           ),
-
           Stack(
             children: [
-
               Padding(
                 padding: const EdgeInsets.only(top: 25, left: 25, right: 25),
                 child: Container(
-                  height: 320,
+                  height: 300,
                   decoration: BoxDecoration(
                       color: Colors.white,
                       borderRadius: BorderRadius.circular(40)),
                   child: Column(
                     children: [
                       Container(
-                        height: size.height * 0.20,
+                        height: size.height * 0.15,
                         margin: const EdgeInsets.only(
                             left: 20, right: 20, top: 20, bottom: 15),
                         decoration: BoxDecoration(
-                            color: const Color.fromARGB(255, 26, 162, 155),
-                            borderRadius: BorderRadius.circular(40),
+                          color: colorGreenLi,
+                          borderRadius: BorderRadius.circular(20),
                         ),
                       ),
                       Padding(
@@ -187,42 +185,41 @@ class TicketFromPage extends StatelessWidget {
                         padding: EdgeInsets.only(left: 25, top: 2, right: 25),
                         child: Divider(),
                       ),
-
                       Padding(
-                        padding: const EdgeInsets.only( left: 25, top: 20),
+                        padding: const EdgeInsets.only(left: 25, top: 20),
                         child: Row(
-                          children: const [
-                      
-                            Icon(
+                          children: [
+                            const Icon(
                               Icons.watch_later_outlined,
-                              color: Color.fromARGB(255, 26, 162, 155),
-                            ), 
-
-                            SizedBox( width: 10 ),
-
-                            Text(
-                              '10:00 AM - 12:00 PM', 
-                              style: TextStyle(
-                              fontSize: 14, 
-                              color: Colors.grey,
-                              fontWeight: FontWeight.w500
+                              color: colorGreenLi,
                             ),
-                           ),
-                          
-                          SizedBox(width: 30 ),
-
-                           Text(
-                            'Book Now', 
-                             style: TextStyle(
-                              fontSize: 18, 
-                              color: Color.fromARGB(255, 203, 132, 25),
-                              fontWeight: FontWeight.bold
+                            const SizedBox(width: 5),
+                            const Text(
+                              '10:00 AM - 12:00 PM',
+                              style: TextStyle(
+                                  fontSize: 14,
+                                  color: Colors.grey,
+                                  fontWeight: FontWeight.w500),
+                            ),
+                            const SizedBox(width: 30),
+                            TextButton(
+                              onPressed: () {
+                                context.push('/search_flight');
+                              },
+                              child: const Text(
+                                'Book Now',
+                                style: TextStyle(
+                                    fontSize: 18,
+                                    color: colorOrange,
+                                    fontWeight: FontWeight.bold),
+                              ),
+                            ),
+                            const SizedBox(width: 2),
+                            const Icon(
+                              Icons.arrow_right,
+                              color: colorOrange,
+                              size: 30,
                             )
-                           ),
-
-                            SizedBox(width: 10 ),
-
-                           Icon( Icons.arrow_right, color: Color.fromARGB(255, 203, 132, 25), size: 30,)
                           ],
                         ),
                       )
@@ -230,39 +227,34 @@ class TicketFromPage extends StatelessWidget {
                   ),
                 ),
               ),
-
-               Positioned(
-                top: 90,
-                left: 80,
-                child: Image.asset('assets/img/pfli.png', height: 130,),
+              Positioned(
+                top: 60,
+                left: 110,
+                child: Image.asset(
+                  'assets/img/pfli.png',
+                  height: 110,
                 ),
-
-                Positioned(
-                  top: 57, 
-                  left: 80,
-                  child: Container(
-                    height: 40, 
-                    width: 80, 
-                    decoration: BoxDecoration(
-                      color: const Color.fromARGB(255, 59, 85, 59),
-                      borderRadius: BorderRadius.circular(20)
-                    ),
-                    child: const Center(
-                      child: Text(
-                        "AOA 150", 
-                        style: TextStyle(
-                          fontSize: 15, 
+              ),
+              Positioned(
+                top: 57,
+                left: 70,
+                child: Container(
+                  height: 30,
+                  width: 80,
+                  decoration: BoxDecoration(
+                      color: colorGreen,
+                      borderRadius: BorderRadius.circular(20)),
+                  child: const Center(
+                    child: Text(
+                      "AOA 150",
+                      style: TextStyle(
+                          fontSize: 15,
                           color: Colors.white,
-                          fontWeight: FontWeight.bold
-                        ),
-                      ),
+                          fontWeight: FontWeight.bold),
                     ),
                   ),
-                ), 
-
-                
-
-                
+                ),
+              ),
             ],
           ),
         ],

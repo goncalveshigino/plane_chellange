@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:plane_chellange/config/colors/colors.dart';
 
 import 'components.dart';
 
@@ -25,14 +26,14 @@ class CardFromTo extends StatelessWidget {
               height: 50,
               width: 325,
               decoration: BoxDecoration(
-                color: const Color.fromARGB(255, 247, 245, 245),
+                color: backgroundColor,
                 borderRadius: BorderRadius.circular(22),
               ),
               child: Container(
                 width: 40,
                 margin: const EdgeInsets.only(right: 200),
                 decoration: BoxDecoration(
-                  color: const Color.fromARGB(255, 26, 162, 155),
+                  color: colorGreenLi,
                   borderRadius: BorderRadius.circular(22),
                 ),
                 child: const Center(
@@ -51,7 +52,7 @@ class CardFromTo extends StatelessWidget {
             text1: 'From',
             text2: 'London, NCD',
             image: 'assets/img/fli.png',
-            color: Color.fromARGB(255, 203, 132, 25),
+            color: colorOrange,
           ),
           const SizedBox(height: 15),
           const FromToPage(

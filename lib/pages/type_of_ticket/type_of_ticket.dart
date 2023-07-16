@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:plane_chellange/config/colors/colors.dart';
 import 'components/components.dart';
 
 class TypeOfTicket extends StatelessWidget {
@@ -7,7 +8,7 @@ class TypeOfTicket extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: const Color.fromARGB(255, 59, 85, 59),
+      backgroundColor: colorGreen,
       body: Column(
         children: const [
           SizedBox(height: 20),

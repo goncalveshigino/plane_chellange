@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
+import 'package:plane_chellange/config/colors/colors.dart';
 import 'package:plane_chellange/pages/widgets/widgets.dart';
 
 import 'components.dart';
@@ -16,7 +17,7 @@ class CardDetails extends StatelessWidget {
       child: Container(
         height: double.infinity,
         decoration: const BoxDecoration(
-            color: Color.fromARGB(255, 247, 245, 245),
+            color: backgroundColor,
             borderRadius: BorderRadius.vertical(top: Radius.circular(25))),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
@@ -54,7 +55,7 @@ class CardDetails extends StatelessWidget {
                       children: const [
                         Icon(
                           Icons.calendar_month_outlined,
-                          color: Color.fromARGB(255, 203, 132, 25),
+                          color: colorOrange,
                         ),
                         SizedBox(width: 10),
                         Text(
@@ -119,7 +120,7 @@ class CardDetails extends StatelessWidget {
                   ),
                   Cabin(
                     text: 'Economy',
-                    color: Color.fromARGB(255, 59, 85, 59),
+                    color: colorGreen,
                     style: TextStyle(
                         fontWeight: FontWeight.bold,
                         fontSize: 15,
@@ -131,7 +132,7 @@ class CardDetails extends StatelessWidget {
                     style: TextStyle(
                         fontWeight: FontWeight.bold,
                         fontSize: 15,
-                        color: Color.fromARGB(255, 57, 78, 57)),
+                        color: colorGreen),
                   ),
                   Cabin(
                     text: 'First',
@@ -139,7 +140,7 @@ class CardDetails extends StatelessWidget {
                     style: TextStyle(
                         fontWeight: FontWeight.bold,
                         fontSize: 15,
-                        color: Color.fromARGB(255, 59, 85, 59)),
+                        color: colorGreen),
                   )
                 ],
               ),
@@ -150,7 +151,7 @@ class CardDetails extends StatelessWidget {
                 context.push('/checkout');
               },
               child: const CustomButton(
-                name: 'Buy Ticket',
+                name: 'Bookin Flight',
               ),
             ),
           ],

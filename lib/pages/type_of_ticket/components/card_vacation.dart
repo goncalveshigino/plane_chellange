@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:plane_chellange/config/colors/colors.dart';
 
 import 'components.dart';
 
@@ -35,7 +36,7 @@ class CardVacations extends StatelessWidget {
                   CustomText(
                     text1: 'CHLD',
                     text2: 'Cerritos',
-                    color: Color.fromARGB(255, 203, 132, 25),
+                    color: colorOrange,
                   ),
                   SizedBox(width: 60),
                   CustomText2(
@@ -61,7 +62,7 @@ class CardVacations extends StatelessWidget {
         const Positioned(
           top: 85,
           left: 155,
-          child: CustomArco(color: Color.fromARGB(255, 203, 132, 25)),
+          child: CustomArco(color: colorOrange),
         )
       ],
     );

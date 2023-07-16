@@ -20,7 +20,7 @@ final appRouter = GoRouter(
 
 
     GoRoute(
-      path: '/',
+      path: '/select_seat',
       builder: (context, state) =>const SelectSeatPage(),
     ),
 

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:plane_chellange/pages/widgets/side_menu.dart';
+import 'package:go_router/go_router.dart';
+import 'package:plane_chellange/config/colors/colors.dart';
 
 import '../type_of_ticket/components/components.dart';
 
@@ -11,18 +12,17 @@ class SearchFlight extends StatelessWidget {
     return Scaffold(
       body: Stack(
         children: [
-          
           Column(
             children: [
               Container(
                 height: 270,
-                color: const Color.fromARGB(255, 59, 85, 59),
+                color: colorGreen,
               ),
               Expanded(
                 child: Container(
                   height: double.infinity,
                   decoration: BoxDecoration(
-                      color: const Color.fromARGB(255, 247, 245, 245),
+                      color: backgroundColor,
                       borderRadius: BorderRadius.circular(20)),
                 ),
               ),
@@ -32,6 +32,7 @@ class SearchFlight extends StatelessWidget {
             top: 1,
             child: Image.asset(
               'assets/img/map.png',
+              color: Colors.grey.shade600,
               height: 250,
             ),
           ),
@@ -48,6 +49,7 @@ class SearchFlight extends StatelessWidget {
                 child: Padding(
                   padding: const EdgeInsets.only(left: 25),
                   child: TextFormField(
+                    style: const TextStyle(color: Colors.white),
                     decoration: InputDecoration(
                       isDense: true,
                       hintText: 'Search  Flight',
@@ -92,16 +94,21 @@ class CardFlight extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Column(
-      children: const [
-        CardFlightValidation(),
-        SizedBox(height: 25),
-        CardFlightValidation(),
-        SizedBox(height: 25),
-        CardFlightValidation(),
-        SizedBox(height: 25),
-        CardFlightValidation(),
-      ],
+    return GestureDetector(
+      onTap: () {
+        context.push('/type_ticket');
+      },
+      child: Column(
+        children: const [
+          CardFlightValidation(),
+          SizedBox(height: 25),
+          CardFlightValidation(),
+          SizedBox(height: 25),
+          CardFlightValidation(),
+          SizedBox(height: 25),
+          CardFlightValidation(),
+        ],
+      ),
     );
   }
 }
@@ -138,7 +145,7 @@ class CardFlightValidation extends StatelessWidget {
                   CustomText(
                     text1: 'CHLD',
                     text2: 'Cerritos',
-                    color: Color.fromARGB(255, 203, 132, 25),
+                    color: colorOrange,
                   ),
                   SizedBox(width: 60),
                   CustomText2(
@@ -162,7 +169,7 @@ class CardFlightValidation extends StatelessWidget {
         const Positioned(
           top: 78,
           left: 134,
-          child: CustomArco(color: Color.fromARGB(255, 203, 132, 25)),
+          child: CustomArco(color: colorOrange),
         ),
       ],
     );

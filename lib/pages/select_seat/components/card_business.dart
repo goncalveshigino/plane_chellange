@@ -1,6 +1,7 @@
 
 
 import 'package:flutter/material.dart';
+import 'package:plane_chellange/config/colors/colors.dart';
 
 class CardBusiness extends StatelessWidget {
   const CardBusiness({
@@ -57,8 +58,7 @@ class CardBusiness extends StatelessWidget {
                           Container(
                             height: 1,
                             width: 180,
-                            color:
-                                const Color.fromARGB(255, 203, 132, 25),
+                            color: colorOrange,
                           ),
                           const SizedBox(width: 10),
                           const Text('SFO'),

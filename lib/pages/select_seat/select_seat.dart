@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
+import 'package:plane_chellange/config/colors/colors.dart';
 import 'package:plane_chellange/pages/widgets/widgets.dart';
 
 import 'components/components.dart';
@@ -9,9 +11,9 @@ class SelectSeatPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: const Color.fromARGB(255, 247, 245, 245),
+      backgroundColor: backgroundColor,
       appBar: AppBar(
-        backgroundColor: const Color.fromARGB(255, 247, 245, 245),
+        backgroundColor: backgroundColor,
         title: const Text(
           'Select Seat',
           style: TextStyle(fontWeight: FontWeight.bold),
@@ -71,7 +73,7 @@ class SelectSeatPage extends StatelessWidget {
             flex: 2,
             child: Container(
               height: 180,
-              color: const Color.fromARGB(255, 47, 70, 47),
+              color: colorGreen,
               child: Column(
                 children: [
                   Row(
@@ -87,7 +89,7 @@ class SelectSeatPage extends StatelessWidget {
                       CustomCheck(
                         text: 'Booked',
                         decoration: BoxDecoration(
-                          color: const Color.fromARGB(255, 59, 85, 59),
+                          color: const Color.fromARGB(255, 48, 64, 48),
                           borderRadius: BorderRadius.circular(5),
                         ),
                       ),
@@ -95,56 +97,25 @@ class SelectSeatPage extends StatelessWidget {
                       CustomCheck(
                         text: 'Selected',
                         decoration: BoxDecoration(
-                          color: const Color.fromARGB(255, 203, 132, 25),
+                          color: colorOrange,
                           borderRadius: BorderRadius.circular(5),
                         ),
                       ),
                     ],
                   ),
                   const SizedBox(height: 40),
-                  const CustomButton(name: 'Select Seat')
+                  GestureDetector(
+                    onTap: () {
+                      context.push('/boarding_pass');
+                    },
+                    child: const CustomButton(name: 'Select Seat'),
+                  )
                 ],
               ),
             ),
           ),
         ],
       ),
-    );
-  }
-}
-
-class CustomCheck extends StatelessWidget {
-  final String text;
-  final Decoration decoration;
-
-  const CustomCheck({
-    super.key,
-    required this.text,
-    required this.decoration,
-  });
-
-  @override
-  Widget build(BuildContext context) {
-    return Row(
-      children: [
-        Padding(
-          padding: const EdgeInsets.only(left: 20, top: 20, right: 10),
-          child: Container(height: 25, width: 25, decoration: decoration),
-        ),
-
-        Padding(
-          padding: const EdgeInsets.only(top: 20),
-          child: Text(
-            text,
-            style: const TextStyle(
-              color: Colors.white,
-              fontWeight: FontWeight.bold,
-            ),
-          ),
-        ),
-
-        //Checkbox(value: , onChanged: )
-      ],
     );
   }
 }

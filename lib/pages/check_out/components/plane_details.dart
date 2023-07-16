@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:plane_chellange/config/colors/colors.dart';
 
 class PlaneDetails extends StatelessWidget {
   const PlaneDetails({
@@ -115,7 +116,7 @@ class PlaneDetails extends StatelessWidget {
              height: 40, 
              width: 80, 
              decoration: BoxDecoration(
-               color: const Color.fromARGB(255, 59, 85, 59),
+               color: colorGreen,
                borderRadius: BorderRadius.circular(20)
              ),
              child: const Center(

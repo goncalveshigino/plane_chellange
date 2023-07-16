@@ -15,13 +15,13 @@ class CardSeat extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: 60,
-      width: 60,
+      height: 50,
+      width: 50,
       margin: const EdgeInsets.only(
         right: 15,
       ),
       decoration: BoxDecoration(
-          color: color, borderRadius: BorderRadius.circular(20)),
+          color: color, borderRadius: BorderRadius.circular(10)),
       child:  Center(
         child: text
       ),

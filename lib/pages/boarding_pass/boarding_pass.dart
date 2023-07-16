@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
+import 'package:plane_chellange/config/colors/colors.dart';
 
 import 'package:plane_chellange/pages/widgets/widgets.dart';
 
@@ -12,15 +14,18 @@ class BoardingPassPage extends StatelessWidget {
   Widget build(BuildContext context) {
     final size = MediaQuery.of(context).size;
     return Scaffold(
-      backgroundColor: const Color.fromARGB(255, 247, 245, 245),
+      backgroundColor: backgroundColor,
       body: Column(
         children: [
           Stack(
             children: [
               Container(
                 height: size.height * 0.35,
-                color: const Color.fromARGB(255, 59, 85, 59),
-                child: Image.asset('assets/img/map.png', color: Colors.grey,),
+                color: colorGreen,
+                child: Image.asset(
+                  'assets/img/map.png',
+                  color: Colors.grey,
+                ),
               ),
               Padding(
                 padding: const EdgeInsets.only(top: 171, left: 25, right: 25),
@@ -66,7 +71,7 @@ class BoardingPassPage extends StatelessWidget {
                                       color: const Color.fromARGB(
                                           255, 64, 152, 121)),
                                   borderRadius: BorderRadius.circular(20)),
-                              color: Colors.amber,
+                              color: colorOrange,
                             ),
                           ),
                           Padding(
@@ -165,25 +170,25 @@ class BoardingPassPage extends StatelessWidget {
                 top: 370,
                 left: 173,
                 child: CustomArco(
-                  color: Color.fromARGB(255, 203, 132, 25),
+                  color: colorOrange,
                 ),
               ),
               const Positioned(
                 top: 330,
                 left: 17,
                 child: BolaCorte(),
-              ), 
-               const Positioned(
+              ),
+              const Positioned(
                 top: 330,
                 right: 17,
                 child: BolaCorte(),
-              ), 
-               const Positioned(
+              ),
+              const Positioned(
                 bottom: 158,
                 right: 17,
                 child: BolaCorte(),
               ),
-               const Positioned(
+              const Positioned(
                 bottom: 158,
                 left: 17,
                 child: BolaCorte(),
@@ -191,7 +196,12 @@ class BoardingPassPage extends StatelessWidget {
             ],
           ),
           const SizedBox(height: 20),
-          const CustomButton(name: 'Download Ticket')
+          GestureDetector(
+            onTap: () {
+              context.push('/ticket_from');
+            },
+            child: const CustomButton(name: 'Download Ticket'),
+          ),
         ],
       ),
     );
@@ -199,6 +209,7 @@ class BoardingPassPage extends StatelessWidget {
 }
 
 class BolaCorte extends StatelessWidget {
+  
   const BolaCorte({
     super.key,
   });
@@ -209,9 +220,8 @@ class BolaCorte extends StatelessWidget {
       child: Container(
         height: 20,
         width: 20,
-        color: const Color.fromARGB(255, 247, 245, 245),
+        color: backgroundColor,
       ),
     );
   }
 }
-

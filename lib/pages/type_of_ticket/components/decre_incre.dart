@@ -1,6 +1,7 @@
 
 
 import 'package:flutter/material.dart';
+import 'package:plane_chellange/config/colors/colors.dart';
 
 class DecreIncre extends StatelessWidget {
   final String image;
@@ -24,7 +25,7 @@ class DecreIncre extends StatelessWidget {
             child: Container(
               height: 30,
               width: 30,
-              color: const Color.fromARGB(255, 203, 132, 25),
+              color: colorOrange,
               child: const Icon(
                 Icons.remove,
                 color: Colors.white,
@@ -42,7 +43,7 @@ class DecreIncre extends StatelessWidget {
             child: Container(
               height: 30,
               width: 30,
-              color: const Color.fromARGB(255, 59, 85, 59),
+              color: colorGreen,
               child: const Icon(
                 Icons.add,
                 color: Colors.white,
